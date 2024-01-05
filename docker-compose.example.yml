@@ -1,0 +1,16 @@
+version: "2.1"
+services:
+  velocity-minecraft:
+    image: ghcr.io/daranix/minecraft-velocity-docker:main
+    container_name: minecraft
+    #platform: linux/arm64
+    environment:
+      #- GID=1000
+      #- UID=1000
+      - VELOCITY_VERSION=3.3.0-SNAPSHOT
+      - VELOCITY_BUILD=316
+    volumes:
+      - ./data:/velocity/data
+    ports:
+      - 25577:25577
+    restart: unless-stopped
