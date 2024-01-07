@@ -13,4 +13,4 @@ RUN apt update && apt upgrade -y && apt install curl jq -y
 #USER nonroot
 WORKDIR /velocity
 COPY scripts scripts
-CMD [ "/velocity/scripts/start.sh" ]
+ENTRYPOINT [ "/velocity/scripts/start.sh" ]
